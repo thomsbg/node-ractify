@@ -38,7 +38,7 @@ module.exports = function(file, options) {
                     if (component.imports.length) {
                         script.push('component.exports.components = {}')
                         component.imports.forEach(function (comp) {
-                            script.push('component.exports.components[\'' + comp.name + '\'] = Ractive.extend(require(\'' + comp.href + '\'));')
+                            script.push('component.exports.components[\'' + comp.name + '\'] = Ractive.extend(require(\'./' + comp.href + '\'));')
                         })
                     }
                     this.queue(script.join('\n\n'))
